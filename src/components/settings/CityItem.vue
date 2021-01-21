@@ -8,11 +8,11 @@
     <v-list-item-content>
       <v-list-item-title
         class="text-h4 font-weight-light"
-        v-text="city"
+        v-text="name"
       ></v-list-item-title>
     </v-list-item-content>
     <v-list-item-action>
-      <v-btn icon>
+      <v-btn icon v-on:click="$emit('remove-item', id)">
         <v-icon color="grey lighten-1">mdi-delete-outline</v-icon>
       </v-btn>
     </v-list-item-action>
@@ -27,7 +27,7 @@ export default {
     };
   },
   name: "CityItem",
-  props: {}
+  props: ["name", "id"]
 };
 </script>
 
