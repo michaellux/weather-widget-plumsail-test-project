@@ -4,9 +4,13 @@
       {{ title }}
     </h2>
 
-    <v-text-field class="addLocationBlock__field" color="primary">
+    <v-text-field
+      v-model="text"
+      class="addLocationBlock__field"
+      color="primary"
+    >
       <template v-slot:append>
-        <v-btn icon>
+        <v-btn icon @click="addCity">
           <v-icon color="grey darken-2">mdi-plus</v-icon>
         </v-btn>
       </template>
@@ -18,11 +22,17 @@
 export default {
   data: function() {
     return {
-      title: "Add location:"
+      title: "Add location:",
+      text: ""
     };
   },
   name: "CityItem",
-  props: {}
+  props: {},
+  methods: {
+    addCity() {
+      this.$store.commit("locations/addCity", this.text, { root: true });
+    }
+  }
 };
 </script>
 
