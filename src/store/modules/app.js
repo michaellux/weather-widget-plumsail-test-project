@@ -4,6 +4,10 @@ export default {
     view: "Settings"
   },
   getters: {},
-  mutations: {},
+  mutations: {
+    changeView(state, name) {
+      state.view = name;
+    }
+  },
   actions: {}
 };
