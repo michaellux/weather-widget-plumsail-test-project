@@ -4,26 +4,30 @@
       {{ title }}
     </h2>
 
-    <v-text-field
+    <v-autocomplete
       v-model="text"
       class="addLocationBlock__field"
       color="primary"
+      :items="cities"
     >
       <template v-slot:append>
         <v-btn icon @click="addCity">
           <v-icon color="grey darken-2">mdi-plus</v-icon>
         </v-btn>
       </template>
-    </v-text-field>
+    </v-autocomplete>
   </div>
 </template>
 
 <script>
+import cityList from "../../data/city.list.json";
+
 export default {
   data: function() {
     return {
       title: "Add location:",
-      text: ""
+      text: "",
+      cities: cityList.map(item => `${item.name}, ${item.country}`)
     };
   },
   name: "CityItem",
