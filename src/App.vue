@@ -23,6 +23,11 @@ export default {
     };
   },
   name: "App",
+  created() {
+    if (this.$store.getters["locations/citiesCount"] === 0) {
+      this.$store.commit("locations/addCity", "Moscow, RU", { root: true });
+    }
+  },
   computed: {
     view() {
       return () => import("./views/" + this.$store.state.app.view);
