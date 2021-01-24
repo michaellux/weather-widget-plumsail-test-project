@@ -5,6 +5,7 @@ import store from "./store";
 import vuetify from "./plugins/vuetify";
 import { Vue2Storage } from "vue2-storage";
 import UUID from "vue-uuid";
+import ApiService from "./common/api.service";
 
 Vue.use(Vue2Storage, {
   prefix: "app_",
@@ -13,6 +14,8 @@ Vue.use(Vue2Storage, {
 });
 
 Vue.use(UUID);
+
+ApiService.init();
 
 Vue.config.productionTip = false;
 
