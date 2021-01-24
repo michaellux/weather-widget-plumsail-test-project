@@ -46,7 +46,7 @@ export default {
         description: res.weather[0].description
       };
       city.pro = {
-        wind: res.wind.speed,
+        wind: res.wind,
         pressure: res.main.pressure,
         humidity: res.main.humidity,
         visibility: res.visibility
