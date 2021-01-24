@@ -2,7 +2,6 @@
   <v-container>
     <div class="d-flex align-items-center justify-space-between">
       <h1 class="text-h1 mt-12 mb-12">{{ title }}</h1>
-      <v-icon large color="grey darken-2"> mdi-cog-outline </v-icon>
     </div>
     <v-row class="d-flex flex-wrap justify-space-between">
       <v-col
