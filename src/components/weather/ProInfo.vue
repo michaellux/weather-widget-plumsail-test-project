@@ -33,6 +33,14 @@
           {{ info.humidity | giveLookHumidity }}
         </span>
       </div>
+      <div class="dewPoint mb-3">
+        <span>
+          <v-icon class="mr-1" large color="blue-grey lighten-4">
+            mdi-grass
+          </v-icon>
+          {{ info.dewPoint | giveLookDewPoint }}
+        </span>
+      </div>
       <div class="visibility mb-3">
         <span>
           <v-icon class="mr-1" large color="blue-grey lighten-4">
@@ -104,6 +112,9 @@ export default {
     giveLookHumidity: function(value) {
       return `Humidity: ${value}%`;
     },
+    giveLookDewPoint: function(value) {
+      return `Dew point: ${value}°C`;
+    },
     giveLookVisibility: function(value) {
       return `Visibility: ${(value / 1000).toFixed(1)}km`;
     }
@@ -112,4 +123,8 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.v-icon {
+  float: left;
+}
+</style>
