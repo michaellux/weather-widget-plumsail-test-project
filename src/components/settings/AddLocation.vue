@@ -33,8 +33,36 @@ export default {
   name: "CityItem",
   props: {},
   methods: {
+    getCityFromList(value) {
+      const [city, country] = value.split(",");
+      const targetCity = cityList.find(item => {
+        return item.name == city.trim() && item.country == country.trim();
+      });
+
+      return targetCity;
+    },
+    convertCityFromList(cityFromList) {
+      return {
+        maininfo: {
+          city_id: cityFromList.id,
+          name: cityFromList.name,
+          country: cityFromList.country
+        },
+        coord: cityFromList.coord,
+        weather: {
+          main: null,
+          details: null,
+          pro: null
+        }
+      };
+    },
     addCity() {
-      this.$store.commit("locations/addCity", this.text, { root: true });
+      console.log(this.text);
+      this.$store.commit(
+        "locations/addCity",
+        this.convertCityFromList(this.getCityFromList(this.text)),
+        { root: true }
+      );
     }
   }
 };

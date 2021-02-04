@@ -28,7 +28,7 @@ export default ApiService;
 export const WeatherService = {
   query(params) {
     console.log(params);
-    return ApiService.query("weather", {
+    return ApiService.query("onecall", {
       params: { ...params, appid: API_KEY }
     });
   }

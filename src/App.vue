@@ -13,6 +13,8 @@
 </template>
 
 <script>
+import cityList from "./data/city.list.json";
+
 export default {
   data() {
     return {
@@ -25,15 +27,44 @@ export default {
   name: "App",
   created() {
     if (this.$store.getters["locations/citiesCount"] === 0) {
-      this.$store.commit("locations/addCity", "Moscow, RU", { root: true });
+      this.$store.commit(
+        "locations/addCity",
+        this.convertCityFromList(this.getCityByIdFromCityList(524894)),
+        { root: true }
+      );
     }
   },
   computed: {
     view() {
       return () => import("./views/" + this.$store.state.app.view);
     }
+  },
+  methods: {
+    getCityByIdFromCityList(id) {
+      return cityList.find(city => city.id === id);
+    },
+    convertCityFromList(cityFromList) {
+      return {
+        maininfo: {
+          city_id: cityFromList.id,
+          name: cityFromList.name,
+          country: cityFromList.country
+        },
+        coord: cityFromList.coord,
+        weather: {
+          main: null,
+          details: null,
+          pro: null
+        }
+      };
+    }
   }
 };
 </script>
 
-<style></style>
+<style>
+.v-tabs,
+.v-tabs-items {
+  height: 100%;
+}
+</style>

@@ -14,7 +14,7 @@
         >
           <city-item
             v-on:remove-item="removeCity"
-            v-bind:name="city.name"
+            v-bind:name="city.maininfo.name"
             v-bind:id="city.id"
           />
         </v-col>

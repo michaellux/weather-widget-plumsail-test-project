@@ -1,5 +1,5 @@
 <template>
-  <v-card outlined class="pa-6">
+  <v-card v-if="!getLoadStatus" outlined class="pa-6">
     <City :name="name" />
     <MainInfo :info="main" />
     <DetailsInfo :info="details" />
@@ -15,7 +15,7 @@ import ProInfo from "./ProInfo.vue";
 import { FETCH_WEATHER } from "../../store/actions.type";
 export default {
   name: "WeatherCard",
-  props: ["name", "id", "main", "details", "pro"],
+  props: ["name", "id", "coord", "main", "details", "pro"],
   components: {
     City,
     MainInfo,
@@ -25,10 +25,18 @@ export default {
   mounted() {
     this.fetchWeather();
   },
-  computed: {},
+  computed: {
+    getLoadStatus() {
+      return this.$store.getters["locations/getLoadStatus"];
+    }
+  },
   methods: {
     fetchWeather() {
-      this.$store.dispatch(FETCH_WEATHER, { q: this.name, units: "metric" });
+      this.$store.dispatch(FETCH_WEATHER, {
+        lat: this.coord.lat,
+        lon: this.coord.lon,
+        units: "metric"
+      });
     }
   }
 };

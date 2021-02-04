@@ -11,15 +11,16 @@
         xl="3"
         lg="4"
         md="6"
-        sm="4"
+        sm="6"
         xs="12"
       >
         <weather-card
-          v-bind:name="city.name"
+          v-bind:name="city.maininfo.name"
+          v-bind:coord="city.coord"
           v-bind:id="city.id"
-          v-bind:main="city.main"
-          v-bind:details="city.details"
-          v-bind:pro="city.pro"
+          v-bind:main="city.weather.main"
+          v-bind:details="city.weather.details"
+          v-bind:pro="city.weather.pro"
         />
       </v-col>
     </v-row>
