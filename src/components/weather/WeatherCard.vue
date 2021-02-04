@@ -1,5 +1,5 @@
 <template>
-  <v-card v-if="!getLoadStatus" outlined class="pa-6">
+  <v-card v-if="!getLoadStatus" outlined class="card pa-6">
     <City :name="name" />
     <MainInfo :info="main" />
     <DetailsInfo :info="details" />
@@ -43,4 +43,8 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped></style>
+<style scoped>
+.v-sheet.v-card {
+  height: 100%;
+}
+</style>

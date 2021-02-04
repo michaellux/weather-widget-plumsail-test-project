@@ -1,8 +1,8 @@
 <template>
-  <div class="d-flex font-weight-light flex-wrap">
-    <v-col class="pl-0">
-      <div class="wind mb-3">
-        <span>
+  <div class="proBlock d-flex font-weight-light flex-wrap">
+    <v-col class="proBlock__first column pl-0">
+      <div class="column__info wind mb-3">
+        <span class="info__text">
           <v-icon
             class="mr-1"
             v-bind:style="{ transform: wind }"
@@ -15,8 +15,8 @@
           {{ windDirection }}
         </span>
       </div>
-      <div class="pressure mb-3">
-        <span>
+      <div class="column__info pressure mb-3">
+        <span class="info__text">
           <v-icon class="mr-1" large color="blue-grey lighten-4">
             mdi-gauge
           </v-icon>
@@ -24,25 +24,25 @@
         </span>
       </div>
     </v-col>
-    <v-col class="pl-0">
-      <div class="humidity mb-3">
-        <span>
+    <v-col class="proBlock__second column pl-0">
+      <div class="column__info humidity mb-3">
+        <span class="info__text">
           <v-icon class="mr-1" large color="blue-grey lighten-4">
             mdi-water-outline
           </v-icon>
           {{ info.humidity | giveLookHumidity }}
         </span>
       </div>
-      <div class="dewPoint mb-3">
-        <span>
+      <div class="column__info dewPoint mb-3">
+        <span class="info__text">
           <v-icon class="mr-1" large color="blue-grey lighten-4">
             mdi-grass
           </v-icon>
           {{ info.dewPoint | giveLookDewPoint }}
         </span>
       </div>
-      <div class="visibility mb-3">
-        <span>
+      <div class="column__info visibility mb-3">
+        <span class="info__text">
           <v-icon class="mr-1" large color="blue-grey lighten-4">
             mdi-eye-outline
           </v-icon>
@@ -126,5 +126,9 @@ export default {
 <style lang="scss" scoped>
 .v-icon {
   float: left;
+}
+
+.info__text {
+  vertical-align: sub;
 }
 </style>

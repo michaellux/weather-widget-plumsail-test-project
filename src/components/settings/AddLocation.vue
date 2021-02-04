@@ -6,7 +6,7 @@
 
     <v-autocomplete
       v-model="text"
-      class="addLocationBlock__field"
+      class="addLocationBlock__select"
       color="primary"
       :items="cities"
     >
@@ -70,7 +70,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-.addLocationBlock__title {
-  margin-right: 2rem;
+.addLocationBlock__select {
+  margin: 0 20vw 0 2rem;
 }
 </style>
