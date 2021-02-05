@@ -43,6 +43,7 @@ export default {
     },
     convertCityFromList(cityFromList) {
       return {
+        order: this.$store.getters["locations/citiesCount"],
         maininfo: {
           city_id: cityFromList.id,
           name: cityFromList.name,

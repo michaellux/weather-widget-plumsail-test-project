@@ -45,6 +45,7 @@ export default {
     },
     convertCityFromList(cityFromList) {
       return {
+        order: 0,
         maininfo: {
           city_id: cityFromList.id,
           name: cityFromList.name,

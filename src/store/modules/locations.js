@@ -26,6 +26,19 @@ export default {
     removeCity(state, id) {
       state.cities = state.cities.filter(city => city.id !== id);
     },
+    swapCitiesPosition(state, payload) {
+      const movedCity = state.cities.find(city => payload.id === city.id);
+      const targetCity = state.cities.find(
+        city => payload.newPosition === city.order
+      );
+      console.log(movedCity);
+      console.log(targetCity);
+
+      movedCity.order === payload.newPosition;
+      targetCity.order === payload.oldPosition;
+
+      console.log(state.cities);
+    },
     [FETCH_START](state) {
       state.isLoading = true;
     },
