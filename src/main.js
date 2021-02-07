@@ -6,6 +6,10 @@ import vuetify from "./plugins/vuetify";
 import { Vue2Storage } from "vue2-storage";
 import UUID from "vue-uuid";
 import ApiService from "./common/api.service";
+import vueCustomElement from "vue-custom-element";
+import "document-register-element/build/document-register-element";
+
+Vue.use(vueCustomElement);
 
 Vue.use(Vue2Storage, {
   prefix: "app_",
@@ -19,9 +23,7 @@ ApiService.init();
 
 Vue.config.productionTip = false;
 
-new Vue({
-  router,
-  store,
-  vuetify,
-  render: h => h(App)
-}).$mount("#app");
+App.store = store;
+App.router = router;
+App.vuetify = vuetify;
+Vue.customElement("weather-widget", App);
