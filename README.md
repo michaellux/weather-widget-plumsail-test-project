@@ -33,6 +33,7 @@ going to be supported and intensively improved by a team.
 
 ## Solution
 ![Скриншот программы](./weather-widget_screenshot.png)
+![Скриншот программы](./weather3.png)
 ### Project setup
 npm install
 ### Build project
