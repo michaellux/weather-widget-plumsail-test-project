@@ -23,10 +23,10 @@ to the left from the city name.
 
 c. Add new locations.
 
-5. Save the configuration in the local storage and restore it on future visits. A user should be able 
+4. Save the configuration in the local storage and restore it on future visits. A user should be able 
 to configure the widget just once and then have the same view until they change the computer 
 or clean the storage. 
-6. By default, on initial opening, request the current user’s location and display the weather in 
+5. By default, on initial opening, request the current user’s location and display the weather in 
 their city. 
 **Important:** UI of your app may differ. You can use any CSS frameworks and UI libraries. We evaluate the 
 quality of your code and UI/UX. The app is quite basic but consider it as a real-life application that is 
