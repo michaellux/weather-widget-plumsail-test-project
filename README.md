@@ -10,7 +10,16 @@ an HTML-page:
 <weather-widget /> 
 <script type="text/javascript" url="{URL to the app}"></script> 
 ```
-3. Get data for the widget from free public API. You must register an account at OpenWeather. 
+2. The configured widget should look like this: 
+![Скриншот программы](./weather1.png)
+3. Get data for the widget from free public API. You must register an account at OpenWeather.
+4. After clicking the ‘Gear’ button at the upper-right corner, switch the view to the following: 
+![Скриншот программы](./weather2.png)
+Here, a user must be able to:
+a. Remove previously added cities. 
+b. Reorder the cities by dragging and dropping them within the list using ‘Hamburger’ icon 
+to the left from the city name. 
+c. Add new locations.
 5. Save the configuration in the local storage and restore it on future visits. A user should be able 
 to configure the widget just once and then have the same view until they change the computer 
 or clean the storage. 
