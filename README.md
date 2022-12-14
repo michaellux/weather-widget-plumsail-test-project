@@ -10,26 +10,28 @@ an HTML-page:
 <weather-widget /> 
 <script type="text/javascript" url="{URL to the app}"></script> 
 ```
-2. The configured widget should look like this: 
-![Скриншот программы](./weather1.png)
-3. Get data for the widget from free public API. You must register an account at OpenWeather.
-4. After clicking the ‘Gear’ button at the upper-right corner, switch the view to the following: 
-![Скриншот программы](./weather2.png)
+
+
+2. Get data for the widget from free public API. You must register an account at OpenWeather.
+3. After clicking the ‘Gear’ button at the upper-right corner, switch the view to the following: 
 Here, a user must be able to:
+
 a. Remove previously added cities. 
+
 b. Reorder the cities by dragging and dropping them within the list using ‘Hamburger’ icon 
 to the left from the city name. 
+
 c. Add new locations.
+
 5. Save the configuration in the local storage and restore it on future visits. A user should be able 
 to configure the widget just once and then have the same view until they change the computer 
 or clean the storage. 
-
 6. By default, on initial opening, request the current user’s location and display the weather in 
 their city. 
-
 **Important:** UI of your app may differ. You can use any CSS frameworks and UI libraries. We evaluate the 
 quality of your code and UI/UX. The app is quite basic but consider it as a real-life application that is 
-going to be supported and intensively improved by a team. 
+going to be supported and intensively improved by a team.
+
 ## Solution
 ![Скриншот программы](./weather-widget_screenshot.png)
 ### Project setup
